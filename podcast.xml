@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <rss version="2.0"
-     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:podcast="https://podcastindex.org/namespace/1.0">
 
   <channel>
 
@@ -11,7 +12,7 @@
       La description de mon podcast.
     </description>
 
-    <link>https://mon-podcast.pages.dev</link>
+    <link>https://tonpodcast.pages.dev</link>
 
     <language>fr-FR</language>
 
@@ -19,7 +20,28 @@
 
     <itunes:explicit>false</itunes:explicit>
 
-    <itunes:image href="https://mon-podcast.pages.dev/image.jpg"/>
+    <itunes:image href="https://tonpodcast.pages.dev/image.jpg"/>
+
+    <item>
+
+      <title>Épisode 1 — Mon premier épisode</title>
+
+      <description>
+        Description de mon premier épisode.
+      </description>
+
+      <pubDate>Wed, 26 Aug 2026 10:00:00 GMT</pubDate>
+
+      <enclosure
+        url="URL_DE_TON_MP3"
+        length="0"
+        type="audio/mpeg"/>
+
+      <guid>episode-001</guid>
+
+      <itunes:duration>00:45:30</itunes:duration>
+
+    </item>
 
   </channel>
 

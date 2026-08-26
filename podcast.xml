@@ -73,9 +73,9 @@
         type = type du fichier
       -->
       <enclosure
-        url="https://[[URL-R2]]/episodes/episode-01.mp3"
-        length="[[TAILLE DU MP3 EN OCTETS]]"
-        type="audio/mpeg"/>
+        url="https://pub-7c46968d965b4f179b937e807ce23e69.r2.dev/episode_1_GweneganCUEFF_v1.mp3"
+        length="65 664 202"
+        type="audio/mp3"/>
 
       <!--
         Identifiant unique de l'épisode.
@@ -86,7 +86,7 @@
       </guid>
 
       <!-- Durée : HH:MM:SS -->
-      <itunes:duration>[[00:45:30]]</itunes:duration>
+      <itunes:duration>01:18:31</itunes:duration>
 
       <!-- Épisode complet -->
       <itunes:episodeType>full</itunes:episodeType>

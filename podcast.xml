@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<rss version="2.0"
+     xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd">
+
+  <channel>
+
+    <title>MON PODCAST</title>
+
+    <description>
+      La description de mon podcast.
+    </description>
+
+    <link>https://mon-podcast.pages.dev</link>
+
+    <language>fr-FR</language>
+
+    <itunes:author>Ton nom</itunes:author>
+
+    <itunes:explicit>false</itunes:explicit>
+
+    <itunes:image href="https://mon-podcast.pages.dev/image.jpg"/>
+
+  </channel>
+
+</rss>

@@ -1,48 +1,138 @@
+```xml
 <?xml version="1.0" encoding="UTF-8"?>
 
 <rss version="2.0"
      xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd"
+     xmlns:content="http://purl.org/rss/1.0/modules/content/"
      xmlns:podcast="https://podcastindex.org/namespace/1.0">
 
   <channel>
 
-    <title>MON PODCAST</title>
+    <!-- ========================================================= -->
+    <!-- INFORMATIONS GÉNÉRALES DU PODCAST                         -->
+    <!-- ========================================================= -->
 
+    <!-- Nom du podcast -->
+    <title>Plein les Bottes</title>
+
+    <!-- Description générale du podcast -->
     <description>
-      La description de mon podcast.
+      Podcast qui invite à un nouveau regard avec des paysans, naturalistes, activistes dans une ambiance détendu et en essayant d'être le plus rôle possible ;-)
     </description>
 
-    <link>https://tonpodcast.pages.dev</link>
+    <!-- Site internet du podcast -->
+    <link>https://podcast-pleinlesbottes.pleinlesbottes-podcast.workers.dev/</link>
 
+    <!-- Langue -->
     <language>fr-FR</language>
 
-    <itunes:author>Ton nom</itunes:author>
+    <!-- Auteur / créateur -->
+    <itunes:author>Marmotte et Ecureil</itunes:author>
 
+    <!-- Adresse e-mail de contact -->
+    <itunes:owner>
+      <itunes:name>Marmotte et Ecureil</itunes:name>
+      <itunes:email>pleinlesbottes.pocast@gmail.com</itunes:email>
+    </itunes:owner>
+
+    <!-- Contenu explicite : false = non explicite -->
     <itunes:explicit>false</itunes:explicit>
 
-    <itunes:image href="https://tonpodcast.pages.dev/image.jpg"/>
+    <!-- Catégorie Apple Podcasts -->
+    <itunes:category text="Society &amp; Culture"/>
+
+    <!-- Image du podcast -->
+    <itunes:image
+      href="https://[[TON-DOMAINE]]/image.jpg"/>
+
+    <!-- Copyright -->
+    <copyright>
+      &#xA9; 2026 Marmotte et Ecureil
+    </copyright>
+
+
+    <!-- ========================================================= -->
+    <!-- ÉPISODE 1                                                 -->
+    <!-- ========================================================= -->
 
     <item>
 
-      <title>Épisode 1 — Mon premier épisode</title>
+      <!-- Titre de l'épisode -->
+      <title>[[TITRE DE L'ÉPISODE 1]]</title>
 
+      <!-- Description de l'épisode -->
       <description>
-        Description de mon premier épisode.
+        [[DESCRIPTION DE L'ÉPISODE 1]]
       </description>
 
-      <pubDate>Wed, 26 Aug 2026 10:00:00 GMT</pubDate>
+      <!-- Date de publication -->
+      <pubDate>Wed, 26 Aug 2026 18:00:00 +0200</pubDate>
 
+      <!--
+        URL du fichier MP3
+        length = taille du fichier en octets
+        type = type du fichier
+      -->
       <enclosure
-        url="https://pub-7c46968d965b4f179b937e807ce23e69.r2.dev/episode_1_GweneganCUEFF_v1.mp3"
-        length="65 664 202"
-        type="audio/mp3"/>
+        url="https://[[URL-R2]]/episodes/episode-01.mp3"
+        length="[[TAILLE DU MP3 EN OCTETS]]"
+        type="audio/mpeg"/>
 
-      <guid>episode-001</guid>
+      <!--
+        Identifiant unique de l'épisode.
+        NE JAMAIS le modifier après publication.
+      -->
+      <guid isPermaLink="false">
+        [[IDENTIFIANT-UNIQUE-EPISODE-01]]
+      </guid>
 
-      <itunes:duration>00:45:30</itunes:duration>
+      <!-- Durée : HH:MM:SS -->
+      <itunes:duration>[[00:45:30]]</itunes:duration>
+
+      <!-- Épisode complet -->
+      <itunes:episodeType>full</itunes:episodeType>
+
+      <!-- Numéro de l'épisode -->
+      <itunes:episode>1</itunes:episode>
 
     </item>
+
+
+    <!-- ========================================================= -->
+    <!-- ÉPISODE 2                                                 -->
+    <!-- ========================================================= -->
+
+    <!--
+    <item>
+
+      <title>[[TITRE DE L'ÉPISODE 2]]</title>
+
+      <description>
+        [[DESCRIPTION DE L'ÉPISODE 2]]
+      </description>
+
+      <pubDate>[[DATE DE PUBLICATION]]</pubDate>
+
+      <enclosure
+        url="https://[[URL-R2]]/episodes/episode-02.mp3"
+        length="[[TAILLE DU MP3]]"
+        type="audio/mpeg"/>
+
+      <guid isPermaLink="false">
+        [[IDENTIFIANT-UNIQUE-EPISODE-02]]
+      </guid>
+
+      <itunes:duration>[[00:00:00]]</itunes:duration>
+
+      <itunes:episodeType>full</itunes:episodeType>
+
+      <itunes:episode>2</itunes:episode>
+
+    </item>
+    -->
+
 
   </channel>
 
 </rss>
+```

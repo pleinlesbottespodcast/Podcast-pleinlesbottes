@@ -9,19 +9,13 @@
 
     <title>Plein les Bottes</title>
 
-    <description>
-      Podcast qui invite à un nouveau regard avec des paysans, naturalistes et activistes, dans une ambiance détendue et en essayant d'être le plus drôle possible ;-)
-    </description>
+    <description>Podcast qui invite à un nouveau regard avec des paysans, naturalistes et activistes, dans une ambiance détendue et en essayant d'être le plus drôle possible ;-)</description>
 
     <link>https://podcast-pleinlesbottes.pleinlesbottes-podcast.workers.dev/</link>
 
     <language>fr-FR</language>
 
     <copyright>Marmotte et Ecureil</copyright>
-
-    <managingEditor>pleinlesbottes.pocast@gmail.com (Marmotte et Ecureil)</managingEditor>
-
-    <webMaster>pleinlesbottes.pocast@gmail.com (Marmotte et Ecureil)</webMaster>
 
     <itunes:author>Marmotte et Ecureil</itunes:author>
 
@@ -30,9 +24,7 @@
       <itunes:email>pleinlesbottes.pocast@gmail.com</itunes:email>
     </itunes:owner>
 
-    <itunes:summary>
-      Podcast qui invite à un nouveau regard avec des paysans, naturalistes et activistes, dans une ambiance détendue et en essayant d'être le plus drôle possible ;-)
-    </itunes:summary>
+    <itunes:summary>Podcast qui invite à un nouveau regard avec des paysans, naturalistes et activistes, dans une ambiance détendue et en essayant d'être le plus drôle possible ;-)</itunes:summary>
 
     <itunes:explicit>false</itunes:explicit>
 
@@ -40,7 +32,7 @@
 
     <itunes:image href="https://podcast-pleinlesbottes.pleinlesbottes-podcast.workers.dev/image.jpeg"/>
 
-    <category>Society &amp; Culture</category>
+    <itunes:category text="Society &amp; Culture"/>
 
     <atom:link
       href="https://podcast-pleinlesbottes.pleinlesbottes-podcast.workers.dev/podcast.xml"
@@ -51,13 +43,9 @@
 
       <title>Quand la motivation n'est pas là avec Gwenegan Cueff</title>
 
-      <description>
-        Dans cet épisode de Plein les Bottes, nous discutons avec Gwenegan Cueff de notre rapport à la motivation et au travail. Que se passe-t-il quand l'envie n'est plus là ? Faut-il toujours chercher à se motiver, ou peut-on accepter les moments de fatigue, de doute et de démotivation ? Une discussion autour du travail, des injonctions à être productif et de la manière dont on peut retrouver du sens dans ce que l'on fait.
-      </description>
+      <description>Dans cet épisode de Plein les Bottes, nous discutons avec Gwenegan Cueff de notre rapport à la motivation et au travail. Que se passe-t-il quand l'envie n'est plus là ? Faut-il toujours chercher à se motiver, ou peut-on accepter les moments de fatigue, de doute et de démotivation ? Une discussion autour du travail, des injonctions à être productif et de la manière dont on peut retrouver du sens dans ce que l'on fait.</description>
 
-      <itunes:summary>
-        Dans cet épisode de Plein les Bottes, nous discutons avec Gwenegan Cueff de notre rapport à la motivation et au travail. Que se passe-t-il quand l'envie n'est plus là ? Une discussion autour du travail, des injonctions à être productif et de la recherche de sens.
-      </itunes:summary>
+      <itunes:summary>Dans cet épisode de Plein les Bottes, nous discutons avec Gwenegan Cueff de notre rapport à la motivation et au travail. Que se passe-t-il quand l'envie n'est plus là ? Une discussion autour du travail, des injonctions à être productif et de la recherche de sens.</itunes:summary>
 
       <itunes:author>Marmotte et Ecureil</itunes:author>
 
@@ -73,8 +61,8 @@
 
       <enclosure
         url="https://pub-7c46968d965b4f179b937e807ce23e69.r2.dev/episode_1_GweneganCUEFF_v1.mp3"
-        length="65 664 202"
-        type="audio/mp3"/>
+        length="65664202"
+        type="audio/mpeg"/>
 
     </item>
 

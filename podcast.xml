@@ -42,7 +42,8 @@
 
     <!-- Image du podcast -->
     <itunes:image
-      href="https://[[TON-DOMAINE]]/image.jpg"/>
+      href="<itunes:image
+href="https://podcast-pleinlesbottes.pleinlesbottes-podcast.workers.dev/image.jpeg"/>"/>
 
     <!-- Copyright -->
     <copyright>

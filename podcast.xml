@@ -65,7 +65,33 @@
         type="audio/mpeg"/>
 
     </item>
+    <item>
 
+      <title>C'est quoi Plein les Bottes ?</title>
+
+      <description>Dans cet épisode de Plein les Bottes, Clément et Auddrey parlent ensemble des motivations et envies de créer ce podcast.</description>
+
+      <itunes:summary>Dans cet épisode de Plein les Bottes, Clément et Auddrey parlent ensemble des motivations et envies de créer ce podcast.</itunes:summary>
+
+      <itunes:author>MClément D. et Audrey G.</itunes:author>
+
+      <itunes:explicit>false</itunes:explicit>
+
+      <itunes:episodeType>full</itunes:episodeType>
+
+      <itunes:episode>0</itunes:episode>
+
+      <guid isPermaLink="false">pleinlesbottes-episode-0-pilote</guid>
+
+      <pubDate>Thu, 25 Sep 2026 00:00:00 +0200</pubDate>
+
+      <enclosure
+        url="https://pub-7c46968d965b4f179b937e807ce23e69.r2.dev/episode0_pilote.mp3"
+        length="25598590"
+        type="audio/mpeg"/>
+
+    </item>
+       
   </channel>
 
 </rss>

@@ -3,21 +3,297 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Mon podcast</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Plein les Bottes</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f3f0e8;
+            color: #26352b;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 30px 20px 60px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header img {
+            width: 220px;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+        }
+
+        h1 {
+            font-size: 42px;
+            margin: 25px 0 10px;
+        }
+
+        .description {
+            font-size: 18px;
+            line-height: 1.6;
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .rss-link {
+            display: inline-block;
+            margin-top: 20px;
+            color: #486b4f;
+        }
+
+        h2 {
+            margin-top: 50px;
+            font-size: 28px;
+        }
+
+        .episode {
+            background: white;
+            border-radius: 15px;
+            padding: 22px;
+            margin: 20px 0;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .episode h3 {
+            margin-top: 0;
+            margin-bottom: 8px;
+            font-size: 22px;
+        }
+
+        .date {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .episode-description {
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        .loading {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .error {
+            background: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            color: #9b2c2c;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px 15px 40px;
+            }
+
+            header img {
+                width: 180px;
+                height: 180px;
+            }
+
+            h1 {
+                font-size: 34px;
+            }
+
+            .description {
+                font-size: 16px;
+            }
+
+            .episode {
+                padding: 18px;
+            }
+
+            .episode h3 {
+                font-size: 19px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <h1>Mon podcast</h1>
+<div class="container">
 
-    <p>Bienvenue sur mon podcast.</p>
+    <header>
 
-    <p>
-        <a href="podcast.xml">
-            Flux RSS
+        <img src="image.jpeg" alt="Plein les Bottes">
+
+        <h1>Plein les Bottes</h1>
+
+        <p class="description">
+            Podcast qui invite à un nouveau regard avec des paysans,
+            naturalistes et activistes, dans une ambiance détendue
+            et en essayant d'être le plus drôle possible ;-)
+        </p>
+
+        <a class="rss-link" href="podcast.xml">
+            🔗 Flux RSS
         </a>
-    </p>
+
+    </header>
+
+    <main>
+
+        <h2>🎧 Les épisodes</h2>
+
+        <div id="episodes">
+            <div class="loading">
+                Chargement des épisodes...
+            </div>
+        </div>
+
+    </main>
+
+</div>
+
+
+<script>
+
+async function loadPodcast() {
+
+    const episodesContainer = document.getElementById("episodes");
+
+    try {
+
+        const response = await fetch("podcast.xml");
+
+        if (!response.ok) {
+            throw new Error("Impossible de charger le flux RSS.");
+        }
+
+        const xmlText = await response.text();
+
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(xmlText, "text/xml");
+
+        const items = xml.querySelectorAll("item");
+
+        episodesContainer.innerHTML = "";
+
+        if (items.length === 0) {
+            episodesContainer.innerHTML =
+                "<p>Aucun épisode trouvé.</p>";
+            return;
+        }
+
+        items.forEach(item => {
+
+            const title =
+                item.querySelector("title")?.textContent ||
+                "Épisode sans titre";
+
+            const description =
+                item.querySelector("description")?.textContent ||
+                "";
+
+            const pubDate =
+                item.querySelector("pubDate")?.textContent ||
+                "";
+
+            const enclosure =
+                item.querySelector("enclosure");
+
+            const audioUrl =
+                enclosure?.getAttribute("url");
+
+            const episode = document.createElement("article");
+
+            episode.className = "episode";
+
+            let dateHTML = "";
+
+            if (pubDate) {
+
+                const date = new Date(pubDate);
+
+                if (!isNaN(date)) {
+
+                    dateHTML = `
+                        <div class="date">
+                            ${date.toLocaleDateString("fr-FR", {
+                                day: "numeric",
+                                month: "long",
+                                year: "numeric"
+                            })}
+                        </div>
+                    `;
+                }
+            }
+
+            let audioHTML = "";
+
+            if (audioUrl) {
+
+                audioHTML = `
+                    <audio controls preload="none">
+                        <source src="${audioUrl}" type="audio/mpeg">
+                        Votre navigateur ne peut pas lire cet audio.
+                    </audio>
+                `;
+
+            } else {
+
+                audioHTML = `
+                    <p>
+                        Audio indisponible.
+                    </p>
+                `;
+            }
+
+            episode.innerHTML = `
+                <h3>${title}</h3>
+
+                ${dateHTML}
+
+                <div class="episode-description">
+                    ${description}
+                </div>
+
+                ${audioHTML}
+            `;
+
+            episodesContainer.appendChild(episode);
+
+        });
+
+    } catch (error) {
+
+        console.error(error);
+
+        episodesContainer.innerHTML = `
+            <div class="error">
+                Impossible de charger les épisodes.
+            </div>
+        `;
+
+    }
+}
+
+loadPodcast();
+
+</script>
 
 </body>
-
 </html>
+
